@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import UserCard from "./components/UserCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsersFailure, getAllUsersSuccess, getAllUserStart, getAllUserThunk } from "./features/users/users";
-import axios from "axios";
 
 const App = () => {
   let {users, loading, error} = useSelector((state) => state.user);
@@ -20,7 +19,7 @@ const dispatch = useDispatch()
   }, [])
 
   return (
-    <div className="bg-[#2a2a2a] h-screen">
+    <div className="bg-[#2a2a2a] h-full">
       <h1 className="text-white">All Users</h1>
 
       <div className="flex flex-wrap justify-around">
@@ -32,71 +31,3 @@ const dispatch = useDispatch()
 };
 
 export default App;
-
-
-
-
-
-// import React, { memo, useCallback, useMemo, useState } from 'react'
-
-// const App = () => {
-
-//   const [state, setState] = useState(true)
-//   const [count, setCount] = useState(0);
-
-//  let user = useMemo(() => {
-//     return {
-//     name : "hasan ashraf"
-//   }
-//   }, [])
-
-
-//   const foo = useCallback(() => {
-//     console.log("log ker raha hon..");
-    
-//   } , [])
-
-//   console.log("app component chalaa -->");
-  
-//   return (
-//     <>
-//     <div>App</div>
-
-// <button onClick={() => setState(!state)}>update state</button>
-// <button onClick={() => setCount(count + 1)}>update count</button>
-
-// <br />
-//     <Home handler={foo} data={user} />
-//     <About />
-//     </>
-//   )
-// }
-
-// export default App
-
-
-
-
-// const Home = memo(( ) => {
-
-//   console.log("home component chalaa -->");
-
-//   // for(let i = 0 ; i < 100000; i++){
-//   //   console.log(i);
-    
-//   // }
-  
-//   return (
-//     <>Home</>
-//   )
-// })
-
-
-// const About =( ) => {
-
-//   console.log("About component chalaa -->");
-  
-//   return (
-//     <>About</>
-//   )
-// }
