@@ -20,7 +20,7 @@ const dispatch = useDispatch()
 
   return (
     <div className="bg-[#2a2a2a] h-full">
-      <h1 className="text-white">All Users</h1>
+      <h1 className="text-white font-bold text-4xl  underline text-center pt-4">All Users</h1>
 
       <div className="flex flex-wrap justify-around">
         {users && users.length > 0 ? users.map((u, idx) => <UserCard key={idx} user={u} />) : <p>user no found</p> }
